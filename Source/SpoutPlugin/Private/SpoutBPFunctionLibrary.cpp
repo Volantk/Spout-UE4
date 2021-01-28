@@ -370,22 +370,22 @@ ESpoutState CheckSenderState(FName spoutName){
 	if (sender->FindSenderName(TCHAR_TO_ANSI(*spoutName.ToString()))) {
 		//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> Exist"));
 		if (bIsInListSenders) {
-			//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> Exist y Registred"));
+			//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> Exist & Registered"));
 			state = ESpoutState::ER;
 		}
 		else {
-			//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> Exist y No Registred"));
+			//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> Exist & No Registered"));
 			state = ESpoutState::EnoR;
 		}
 	}
 	else {
 		//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> No Exist"));
 		if (bIsInListSenders) {
-			//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> No Exist y Registred"));
+			//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> No Exist & Registered"));
 			state = ESpoutState::noER;
 		}
 		else {
-			//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> No Exist y No Registred"));
+			//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> No Exist & No Registered"));
 			state = ESpoutState::noEnoR;
 		}
 	}
