@@ -1,14 +1,7 @@
 *Modification of original plugin by [AleDel](https://github.com/AleDel/Spout-UE4) with UE versions 4.19+.*
 
 **This was tested with:**
-* 4.19
-* 4.20
-* 4.21
-* 4.22
-* 4.23 
-* 4.24
-* 4.25
-* 4.26 (Compiles, no working output. Attempted fix in progress...)
+* 4.26
 
 # Spout-UE4
 This is a [Spout](http://spout.zeal.co/) Plugin for Unreal Engine. It allows you to send and receive textures using Spout framework.
@@ -21,9 +14,11 @@ If you don't know what 'clone' means, then just download the whole repository, u
 
 ## Sending Spout
 
-This is done with the **Spout sender** node which has can send texture either from the Game viewport or from a Render Targert 2D: 
+This is done with the **Spout sender** node which has can send texture either from the Game viewport or from a Render Target 2D: 
   * **Game Viewport** sends the image of the viewport, but please note that it doesn't work in standalone or packaged game.
   * **TextureRenderTarget2D** in which case you should create a _SceneCaptureComponent2D_ and a *Render target 2D* which you should reference in the node.
+
+  **NOTE:** Spout sender must run on **Event Tick**!
 
 Use **Close Sender** node to close Spouts. The best way is to connect it to **Event EndPlay** node.
 
