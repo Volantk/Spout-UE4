@@ -1,5 +1,6 @@
-#include "SpoutPluginPrivatePCH.h"
 #include "../Public/SpoutBPFunctionLibrary.h"
+
+#include "SpoutPluginPrivatePCH.h"
 
 #include <string>
 #include <iostream>
