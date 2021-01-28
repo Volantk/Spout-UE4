@@ -419,6 +419,13 @@ bool USpoutBPFunctionLibrary::SpoutSender(FName spoutName, ESpoutSendTextureFrom
 			UE_LOG(SpoutLog, Warning, TEXT("No TextureRenderTarget2D Selected!!"));
 			return false;
 		}
+
+		if (textureRenderTarget2D->Resource->TextureRHI == nullptr)
+		{
+			UE_LOG(SpoutLog, Warning, TEXT("textureRenderTarget2D->Resource->TextureRHI was nullptr!!"));
+			return false;
+		}
+
 		textureRenderTarget2D->TargetGamma = targetGamma;
 		baseTexture = (ID3D11Texture2D*)textureRenderTarget2D->Resource->TextureRHI->GetTexture2D()->GetNativeResource();
 		break;
